@@ -227,8 +227,8 @@ void P_MovePlayer (player_t* player)
 
         if (cmd->forwardmove)
         {
-          P_Bob(player,mo->angle,cmd->forwardmove*bobfactor);
-          P_Thrust(player,mo->angle,cmd->forwardmove*movefactor);
+          P_Bob(player,mo->angle,cmd->forwardmove*bobfactor/2);
+          P_Thrust(player,mo->angle,cmd->forwardmove*movefactor/2);
         }
 
         if (cmd->sidemove)

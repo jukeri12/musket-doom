@@ -1,0 +1,10 @@
+dstrings.o: dstrings.c /usr/include/stdc-predef.h dstrings.h d_englsh.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0/include/stddef.h
+
+/usr/include/stdc-predef.h:
+
+dstrings.h:
+
+d_englsh.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0/include/stddef.h:

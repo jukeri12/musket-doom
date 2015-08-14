@@ -1,0 +1,1 @@
+prboom -iwad estonia.wad %*

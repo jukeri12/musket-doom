@@ -1,0 +1,176 @@
+﻿Build started 14.8.2015 18:01:43.
+     1>Project "C:\Users\Johuotar\musket-doom\VisualC8\Doom.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I../VisualC8 /I../src /ZI /nologo /W3 /WX- /Od /Oy- /D _DEBUG /D WIN32 /D _WINDOWS /D HAVE_CONFIG_H /D I386_ASM /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _VC80_UPGRADE=0x0600 /Gm /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc120.pdb" /Gd /TC /analyze- /errorReport:prompt ..\src\am_map.c ..\src\doomdef.c ..\src\doomstat.c ..\src\dstrings.c ..\src\d_client.c ..\src\d_deh.c ..\src\d_items.c ..\src\d_main.c ..\src\f_finale.c ..\src\f_wipe.c ..\src\g_game.c ..\src\hu_lib.c ..\src\hu_stuff.c ..\src\info.c ..\src\lprintf.c ..\src\md5.c ..\src\Mmus2mid.c ..\src\m_argv.c ..\src\m_bbox.c ..\src\m_cheat.c ..\src\m_menu.c ..\src\m_misc.c ..\src\m_random.c ..\src\p_ceilng.c ..\src\p_checksum.c ..\src\p_doors.c ..\src\p_enemy.c ..\src\p_floor.c ..\src\p_genlin.c ..\src\p_inter.c ..\src\p_lights.c ..\src\p_map.c ..\src\p_maputl.c ..\src\p_mobj.c ..\src\p_plats.c ..\src\p_pspr.c ..\src\p_saveg.c ..\src\p_setup.c ..\src\p_sight.c ..\src\p_spec.c ..\src\p_switch.c ..\src\p_telept.c ..\src\p_tick.c ..\src\p_user.c ..\src\r_bsp.c ..\src\r_data.c ..\src\r_demo.c ..\src\r_draw.c ..\src\r_filter.c ..\src\r_fps.c ..\src\r_main.c ..\src\r_patch.c ..\src\r_plane.c ..\src\r_segs.c ..\src\r_sky.c ..\src\r_things.c ..\src\SDL\i_joy.c ..\src\SDL\i_main.c ..\src\SDL\i_network.c ..\src\SDL\i_sound.c ..\src\SDL\i_sshot.c ..\src\SDL\i_system.c ..\src\SDL\i_video.c ..\src\SDL\SDL_win32_main.c ..\src\sounds.c ..\src\st_lib.c ..\src\st_stuff.c ..\src\s_sound.c ..\src\tables.c ..\src\version.c ..\src\v_video.c ..\src\wi_stuff.c ..\src\w_mmap.c ..\src\w_wad.c ..\src\z_bmalloc.c ..\src\z_zone.c
+         z_zone.c
+         z_bmalloc.c
+         w_wad.c
+         w_mmap.c
+         wi_stuff.c
+         v_video.c
+         version.c
+         tables.c
+         s_sound.c
+         st_stuff.c
+         st_lib.c
+         sounds.c
+         SDL_win32_main.c
+         i_video.c
+         i_system.c
+         i_sshot.c
+         i_sound.c
+         i_network.c
+         i_main.c
+         i_joy.c
+         Generating Code...
+         Compiling...
+         r_things.c
+         r_sky.c
+         r_segs.c
+         r_plane.c
+         r_patch.c
+         r_main.c
+         r_fps.c
+         r_filter.c
+         r_draw.c
+         r_demo.c
+         r_data.c
+         r_bsp.c
+         p_user.c
+         p_tick.c
+         p_telept.c
+         p_switch.c
+         p_spec.c
+         p_sight.c
+         p_setup.c
+         p_saveg.c
+         Generating Code...
+         Compiling...
+         p_pspr.c
+         p_plats.c
+         p_mobj.c
+         p_maputl.c
+         p_map.c
+         p_lights.c
+         p_inter.c
+         p_genlin.c
+         p_floor.c
+         p_enemy.c
+         p_doors.c
+         p_checksum.c
+         p_ceilng.c
+         m_random.c
+         m_misc.c
+         m_menu.c
+         m_cheat.c
+         m_bbox.c
+         m_argv.c
+         Mmus2mid.c
+         Generating Code...
+         Compiling...
+         md5.c
+         lprintf.c
+         info.c
+         hu_stuff.c
+         hu_lib.c
+         g_game.c
+         f_wipe.c
+         f_finale.c
+         d_main.c
+         d_items.c
+         d_deh.c
+         d_client.c
+         dstrings.c
+         doomstat.c
+         doomdef.c
+         am_map.c
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _DEBUG /D _VC80_UPGRADE=0x0600 /l"0x0407" /I"\Dokumente und Einstellungen\Admin\Eigene Dateien\prboom24\Icons" /nologo /fo".\Debug\icons.res" ..\Icons\icons.rc 
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1193,5): warning MSB8012: TargetPath(C:\Users\Johuotar\musket-doom\VisualC8\.\Debug\Doom.exe) does not match the Linker's OutputFile property value (C:\Users\Johuotar\musket-doom\VisualC8\Debug\prboom.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1195,5): warning MSB8012: TargetName(Doom) does not match the Linker's OutputFile property value (prboom). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug/prboom.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib sdl.lib sdl_mixer.lib sdl_net.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug/prboom.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\Doom.lib" /MACHINE:X86 /SAFESEH .\Debug\icons.res
+         .\Debug/am_map.obj
+         .\Debug/doomdef.obj
+         .\Debug/doomstat.obj
+         .\Debug/dstrings.obj
+         .\Debug/d_client.obj
+         .\Debug/d_deh.obj
+         .\Debug/d_items.obj
+         .\Debug/d_main.obj
+         .\Debug/f_finale.obj
+         .\Debug/f_wipe.obj
+         .\Debug/g_game.obj
+         .\Debug/hu_lib.obj
+         .\Debug/hu_stuff.obj
+         .\Debug/info.obj
+         .\Debug/lprintf.obj
+         .\Debug/md5.obj
+         .\Debug/Mmus2mid.obj
+         .\Debug/m_argv.obj
+         .\Debug/m_bbox.obj
+         .\Debug/m_cheat.obj
+         .\Debug/m_menu.obj
+         .\Debug/m_misc.obj
+         .\Debug/m_random.obj
+         .\Debug/p_ceilng.obj
+         .\Debug/p_checksum.obj
+         .\Debug/p_doors.obj
+         .\Debug/p_enemy.obj
+         .\Debug/p_floor.obj
+         .\Debug/p_genlin.obj
+         .\Debug/p_inter.obj
+         .\Debug/p_lights.obj
+         .\Debug/p_map.obj
+         .\Debug/p_maputl.obj
+         .\Debug/p_mobj.obj
+         .\Debug/p_plats.obj
+         .\Debug/p_pspr.obj
+         .\Debug/p_saveg.obj
+         .\Debug/p_setup.obj
+         .\Debug/p_sight.obj
+         .\Debug/p_spec.obj
+         .\Debug/p_switch.obj
+         .\Debug/p_telept.obj
+         .\Debug/p_tick.obj
+         .\Debug/p_user.obj
+         .\Debug/r_bsp.obj
+         .\Debug/r_data.obj
+         .\Debug/r_demo.obj
+         .\Debug/r_draw.obj
+         .\Debug/r_filter.obj
+         .\Debug/r_fps.obj
+         .\Debug/r_main.obj
+         .\Debug/r_patch.obj
+         .\Debug/r_plane.obj
+         .\Debug/r_segs.obj
+         .\Debug/r_sky.obj
+         .\Debug/r_things.obj
+         .\Debug/i_joy.obj
+         .\Debug/i_main.obj
+         .\Debug/i_network.obj
+         .\Debug/i_sound.obj
+         .\Debug/i_sshot.obj
+         .\Debug/i_system.obj
+         .\Debug/i_video.obj
+         .\Debug/SDL_win32_main.obj
+         .\Debug/sounds.obj
+         .\Debug/st_lib.obj
+         .\Debug/st_stuff.obj
+         .\Debug/s_sound.obj
+         .\Debug/tables.obj
+         .\Debug/version.obj
+         .\Debug/v_video.obj
+         .\Debug/wi_stuff.obj
+         .\Debug/w_mmap.obj
+         .\Debug/w_wad.obj
+         .\Debug/z_bmalloc.obj
+         .\Debug/z_zone.obj
+     1>am_map.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+         Doom.vcxproj -> C:\Users\Johuotar\musket-doom\VisualC8\.\Debug\Doom.exe
+     1>Done Building Project "C:\Users\Johuotar\musket-doom\VisualC8\Doom.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.55

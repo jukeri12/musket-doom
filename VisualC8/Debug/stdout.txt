@@ -1,0 +1,22 @@
+
+prboom v2.5.0 (http://prboom.sourceforge.net/)
+I_SetAffinityMask: manual affinity mask is 1
+M_LoadDefaults: Load system defaults.
+ default file: C:\Users\Johuotar\musket-doom\VisualC8\Debug/prboom.cfg
+ found estonia.wad
+IWAD found: estonia.wad
+PrBoom (built Aug 14 2015), playing: The Ultimate DOOM
+PrBoom is released under the GNU General Public license v2.0.
+You are welcome to redistribute it under certain conditions.
+It comes with ABSOLUTELY NO WARRANTY. See the file COPYING for details.
+V_Init: allocate screens.
+Failed to autoload prboom.wad
+D_InitNetGame: Checking for network game.
+W_Init: Init WADfiles.
+ adding estonia.wad
+W_InitCache
+
+Loading DEH file (WAD)
+W_GetNumForName: CRBRICK not found
+W_ReportLocks:
+Lump     Size   Locks  Tics

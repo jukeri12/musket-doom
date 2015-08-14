@@ -1,9 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual C++ Express 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Doom", "Doom.vcproj", "{205FF625-2E96-4BC8-A269-62530A7D1F24}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Doom", "Doom.vcxproj", "{205FF625-2E96-4BC8-A269-62530A7D1F24}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prboom_server", "prboom_server.vcproj", "{BA3D7F7F-EF41-4073-A251-39C0B6AD1F75}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prboom_server", "prboom_server.vcxproj", "{BA3D7F7F-EF41-4073-A251-39C0B6AD1F75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

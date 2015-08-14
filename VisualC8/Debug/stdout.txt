@@ -3,20 +3,46 @@ prboom v2.5.0 (http://prboom.sourceforge.net/)
 I_SetAffinityMask: manual affinity mask is 1
 M_LoadDefaults: Load system defaults.
  default file: C:\Users\Johuotar\musket-doom\VisualC8\Debug/prboom.cfg
- found estonia.wad
-IWAD found: estonia.wad
+ found doom.wad
+IWAD found: doom.wad
 PrBoom (built Aug 14 2015), playing: The Ultimate DOOM
 PrBoom is released under the GNU General Public license v2.0.
 You are welcome to redistribute it under certain conditions.
 It comes with ABSOLUTELY NO WARRANTY. See the file COPYING for details.
 V_Init: allocate screens.
-Failed to autoload prboom.wad
+ found prboom.wad
 D_InitNetGame: Checking for network game.
 W_Init: Init WADfiles.
- adding estonia.wad
+ adding doom.wad
+ adding prboom.wad
 W_InitCache
 
 Loading DEH file (WAD)
-W_GetNumForName: CRBRICK not found
+M_Init: Init miscellaneous info.
+R_Init: Init DOOM refresh daemon - 
+R_LoadTrigTables: Endianness...ok.
+R_InitData: Textures Flats Sprites Tranmap build [        ]........
+R_Init: R_InitPlanes R_InitLightTables R_InitSkyMap R_InitTranslationsTables R_InitPatches 
+P_Init: Init Playloop state.
+I_Init: Setting up machine state.
+I_InitSound:  configured audio device with 1024 samples/slice
+I_InitSound: sound module ready
+S_Init: Setting up sound.
+S_Init: default sfx volume 8
+HU_Init: Setting up heads up display.
+I_InitGraphics: 640x480
+I_UpdateVideoMode: 640x480 (fullscreen)
+V_InitMode: using 8 bit video mode
+I_SetRes: Using resolution 640x480
+I_UpdateVideoMode: 0xc0000000, SDL buffer, direct access
+ST_Init: Init status bar.
+G_DoPlayDemo: playing demo with ultimate doom compatibility
+P_GetNodesVersion: using normal BSP nodes
+P_GetNodesVersion: using normal BSP nodes
+P_GetNodesVersion: using normal BSP nodes
+I_ShutdownMusic: removing doom.tmp
+I_ShutdownSound: 
 W_ReportLocks:
 Lump     Size   Locks  Tics
+
+###########################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################       #################################################################       ###########        ###################################  #########  ###  ################# ##########   ##   ########################  ###  ##################################################   ##   ############################################       ##############################   ##   ###########################       ###########   ##   #############################   ##############  #################################   ##   #############################  ##################################################   ##   #################################################################################   ##   #############################################       ##############################   ###  ####    ####    ################# ######### ######## #######################  ################################################################################                           http://freedoom.github.io/                                                                                                                                                                                                                                                                                                                                                                                                                                           

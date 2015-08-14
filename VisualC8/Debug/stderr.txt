@@ -1,10 +1,13 @@
  default file: C:\Users\Johuotar\musket-doom\VisualC8\Debug/prboom.cfg
-IWAD found: estonia.wad
+IWAD found: doom.wad
 PrBoom (built Aug 14 2015), playing: The Ultimate DOOM
 PrBoom is released under the GNU General Public license v2.0.
 You are welcome to redistribute it under certain conditions.
 It comes with ABSOLUTELY NO WARRANTY. See the file COPYING for details.
-Failed to autoload prboom.wad
-W_GetNumForName: CRBRICK not found
+S_Init: default sfx volume 8
+P_GetNodesVersion: using normal BSP nodes
+P_GetNodesVersion: using normal BSP nodes
+P_GetNodesVersion: using normal BSP nodes
+I_ShutdownMusic: removing doom.tmp
 W_ReportLocks:
 Lump     Size   Locks  Tics

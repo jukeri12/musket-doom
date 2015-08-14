@@ -1,1 +1,1 @@
-prboom -iwad estonia.wad %*
+prboom -iwad doom.wad %*

@@ -641,6 +641,21 @@ static void P_GunShot(mobj_t *mo, boolean accurate)
   P_LineAttack(mo, angle, MISSILERANGE, bulletslope, damage);
 }
 
+///
+/// P_MusketShot
+///
+static void P_MusketShot(mobj_t *mo)
+{
+  int damage = 85*(P_Random(pr_gunshot)%3+1);
+  angle_t angle = mo->angle;
+
+  //Muskets are never accurate!
+  int t = P_Random(pr_misfire);
+  angle += (t - P_Random(pr_misfire))<<18;
+
+  P_LineAttack(mo, angle, MISSILERANGE, bulletslope, damage);
+}
+
 //
 // A_FirePistol
 //
@@ -654,7 +669,9 @@ void A_FirePistol(player_t *player, pspdef_t *psp)
 
   A_FireSomething(player,0);                                      // phares
   P_BulletSlope(player->mo);
-  P_GunShot(player->mo, !player->refire);
+  P_MusketShot(player->mo);
+
+  player->pendingweapon = wp_pistol;
 }
 
 //

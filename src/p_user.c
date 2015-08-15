@@ -225,16 +225,17 @@ void P_MovePlayer (player_t* player)
         int bobfactor =
           friction < ORIG_FRICTION ? movefactor : ORIG_FRICTION_FACTOR;
 
+	/*Musket Doom: Modified movement speed to something more realistic
         if (cmd->forwardmove)
         {
-          P_Bob(player,mo->angle,cmd->forwardmove*bobfactor/2);
-          P_Thrust(player,mo->angle,cmd->forwardmove*movefactor/2);
+          P_Bob(player,mo->angle,cmd->forwardmove*bobfactor/4);
+          P_Thrust(player,mo->angle,cmd->forwardmove*movefactor/4);
         }
 
         if (cmd->sidemove)
         {
-          P_Bob(player,mo->angle-ANG90,cmd->sidemove*bobfactor);
-          P_Thrust(player,mo->angle-ANG90,cmd->sidemove*movefactor);
+          P_Bob(player,mo->angle-ANG90,cmd->sidemove*bobfactor/4);
+          P_Thrust(player,mo->angle-ANG90,cmd->sidemove*movefactor/4);
         }
       }
       if (mo->state == states+S_PLAY)

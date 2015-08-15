@@ -289,6 +289,7 @@ typedef enum {
   sfx_skesit,
   sfx_skeatk,
   sfx_radio,
+  sfx_swing,
 
 #ifdef DOGS
   /* killough 11/98: dog sounds */

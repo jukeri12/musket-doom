@@ -1,0 +1,5 @@
+Place the compiled prboom executable here to run the game.
+
+musketd.wad is based on Freedoom project's GPL wad-files. In time we hope to have totally converted or removed many assets from there.
+
+prboom.wad is automatically generated when compiling prboom and is necessary for running PrBoom.

@@ -203,6 +203,7 @@ int     key_weapon6;
 int     key_weapon7;                                                //    ^
 int     key_weapon8;                                                //    |
 int     key_weapon9;                                                // phares
+int	key_reload;
 
 int     key_screenshot;             // killough 2/22/98: screenshot key
 int     mousebfire;
@@ -377,6 +378,12 @@ void G_BuildTiccmd(ticcmd_t* cmd)
       dclicks = 0;
     }
 
+  //reload current weapon in musket doom
+ /* if (gamekeydown[key_weapon5])
+    {
+      cmd->buttons |= BT_RELOAD;
+    }
+  */
   // Toggle between the top 2 favorite weapons.                   // phares
   // If not currently aiming one of these, switch to              // phares
   // the favorite. Only switch if you possess the weapon.         // phares
@@ -1040,7 +1047,11 @@ void G_PlayerReborn (int player)
   p->readyweapon = p->pendingweapon = wp_pistol;
   p->weaponowned[wp_fist] = true;
   p->weaponowned[wp_pistol] = true;
-  p->ammo[am_clip] = initial_bullets; // Ty 03/12/98 - use dehacked values
+  p->weaponowned[wp_shotgun] = true;
+  p->weaponloaded[wp_pistol] = true;
+  p->weaponloaded[wp_shotgun] = true;
+  p->ammo[am_clip] = 10; // Ty 03/12/98 - use dehacked values
+  p->ammo[am_shell] = 4;
 
   for (i=0 ; i<NUMAMMO ; i++)
     p->maxammo[i] = maxammo[i];

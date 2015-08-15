@@ -44,8 +44,8 @@
 #include "d_event.h"
 #include "r_demo.h"
 
-#define LOWERSPEED   (FRACUNIT*6)
-#define RAISESPEED   (FRACUNIT*6)
+#define LOWERSPEED   (FRACUNIT*3)
+#define RAISESPEED   (FRACUNIT*3)
 #define WEAPONBOTTOM (FRACUNIT*128)
 #define WEAPONTOP    (FRACUNIT*32)
 
@@ -267,6 +267,16 @@ boolean P_CheckAmmo(player_t *player)
   return false;
 }
 
+boolean P_CheckLoaded(player_t *player)
+{
+  //Don't do a thing if the gun isn't loaded.
+  if (!player->weaponloaded[player->readyweapon])
+    return false;
+
+  if (player->weaponloaded[player->readyweapon] == true)
+    return true;
+}
+
 //
 // P_FireWeapon.
 //
@@ -275,6 +285,9 @@ static void P_FireWeapon(player_t *player)
 {
   statenum_t newstate;
 
+  if (!P_CheckLoaded(player))
+    return;
+
   if (!P_CheckAmmo(player))
     return;
 
@@ -282,6 +295,7 @@ static void P_FireWeapon(player_t *player)
   newstate = weaponinfo[player->readyweapon].atkstate;
   P_SetPsprite(player, ps_weapon, newstate);
   P_NoiseAlert(player->mo, player->mo);
+  player->weaponloaded[player->readyweapon] = false;
 }
 
 //
@@ -489,42 +503,6 @@ void A_Punch(player_t *player, pspdef_t *psp)
 
   if (player->powers[pw_strength])
     damage *= 10;
-
-  angle = player->mo->angle;
-
-  // killough 5/5/98: remove dependence on order of evaluation:
-  t = P_Random(pr_punchangle);
-  angle += (t - P_Random(pr_punchangle))<<18;
-
-  /* killough 8/2/98: make autoaiming prefer enemies */
-  if (!mbf_features ||
-      (slope = P_AimLineAttack(player->mo, angle, MELEERANGE, MF_FRIEND),
-       !linetarget))
-    slope = P_AimLineAttack(player->mo, angle, MELEERANGE, 0);
-
-  P_LineAttack(player->mo, angle, MELEERANGE, slope, damage);
-
-  if (!linetarget)
-    return;
-
-  S_StartSound(player->mo, sfx_punch);
-
-  // turn to face target
-
-  player->mo->angle = R_PointToAngle2(player->mo->x, player->mo->y,
-                                      linetarget->x, linetarget->y);
-  R_SmoothPlaying_Reset(player); // e6y
-}
-
-//
-// A_Sword
-// Basically a more powerful, slower version of the punch.
-//
-
-void A_Sword(player_t *player, pspdef_t *psp)
-{
-  angle_t angle;
-  int t, slope, damage = (P_Random(pr_punch)%5+35)<<1;
 
   angle = player->mo->angle;
 

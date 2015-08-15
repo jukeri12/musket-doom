@@ -134,6 +134,7 @@ typedef struct player_s
   weapontype_t        pendingweapon;
 
   boolean             weaponowned[NUMWEAPONS];
+  boolean             weaponloaded[NUMWEAPONS];
   int                 ammo[NUMAMMO];
   int                 maxammo[NUMAMMO];
 

@@ -412,6 +412,12 @@ void P_PlayerThink (player_t* player)
   else
     player->usedown = false;
 
+  //check for reload
+  if (cmd->buttons & BT_USE)
+    {
+       player->weaponloaded[player->readyweapon] = true;
+    }
+
   // cycle psprites
 
   P_MovePsprites (player);

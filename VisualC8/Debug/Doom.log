@@ -1,4 +1,4 @@
-﻿Build started 14.8.2015 18:01:43.
+﻿Build started 15.8.2015 15:09:21.
      1>Project "C:\Users\Johuotar\musket-doom\VisualC8\Doom.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I../VisualC8 /I../src /ZI /nologo /W3 /WX- /Od /Oy- /D _DEBUG /D WIN32 /D _WINDOWS /D HAVE_CONFIG_H /D I386_ASM /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _VC80_UPGRADE=0x0600 /Gm /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc120.pdb" /Gd /TC /analyze- /errorReport:prompt ..\src\am_map.c ..\src\doomdef.c ..\src\doomstat.c ..\src\dstrings.c ..\src\d_client.c ..\src\d_deh.c ..\src\d_items.c ..\src\d_main.c ..\src\f_finale.c ..\src\f_wipe.c ..\src\g_game.c ..\src\hu_lib.c ..\src\hu_stuff.c ..\src\info.c ..\src\lprintf.c ..\src\md5.c ..\src\Mmus2mid.c ..\src\m_argv.c ..\src\m_bbox.c ..\src\m_cheat.c ..\src\m_menu.c ..\src\m_misc.c ..\src\m_random.c ..\src\p_ceilng.c ..\src\p_checksum.c ..\src\p_doors.c ..\src\p_enemy.c ..\src\p_floor.c ..\src\p_genlin.c ..\src\p_inter.c ..\src\p_lights.c ..\src\p_map.c ..\src\p_maputl.c ..\src\p_mobj.c ..\src\p_plats.c ..\src\p_pspr.c ..\src\p_saveg.c ..\src\p_setup.c ..\src\p_sight.c ..\src\p_spec.c ..\src\p_switch.c ..\src\p_telept.c ..\src\p_tick.c ..\src\p_user.c ..\src\r_bsp.c ..\src\r_data.c ..\src\r_demo.c ..\src\r_draw.c ..\src\r_filter.c ..\src\r_fps.c ..\src\r_main.c ..\src\r_patch.c ..\src\r_plane.c ..\src\r_segs.c ..\src\r_sky.c ..\src\r_things.c ..\src\SDL\i_joy.c ..\src\SDL\i_main.c ..\src\SDL\i_network.c ..\src\SDL\i_sound.c ..\src\SDL\i_sshot.c ..\src\SDL\i_system.c ..\src\SDL\i_video.c ..\src\SDL\SDL_win32_main.c ..\src\sounds.c ..\src\st_lib.c ..\src\st_stuff.c ..\src\s_sound.c ..\src\tables.c ..\src\version.c ..\src\v_video.c ..\src\wi_stuff.c ..\src\w_mmap.c ..\src\w_wad.c ..\src\z_bmalloc.c ..\src\z_zone.c
@@ -173,4 +173,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:06.55
+Time Elapsed 00:00:06.77

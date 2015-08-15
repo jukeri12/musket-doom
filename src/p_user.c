@@ -225,7 +225,7 @@ void P_MovePlayer (player_t* player)
         int bobfactor =
           friction < ORIG_FRICTION ? movefactor : ORIG_FRICTION_FACTOR;
 
-	/*Musket Doom: Modified movement speed to something more realistic
+	/*Musket Doom: Modified movement speed to something more realistic*/
         if (cmd->forwardmove)
         {
           P_Bob(player,mo->angle,cmd->forwardmove*bobfactor/4);
@@ -451,3 +451,4 @@ void P_PlayerThink (player_t* player)
     player->powers[pw_invulnerability] & 8 ? INVERSECOLORMAP :
     player->powers[pw_infrared] > 4*32 || player->powers[pw_infrared] & 8;
   }
+  

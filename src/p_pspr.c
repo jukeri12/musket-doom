@@ -660,7 +660,7 @@ static void P_GunShot(mobj_t *mo, boolean accurate)
 ///
 static void P_MusketShot(mobj_t *mo, int spread, int bdmg)
 {
-  int damage = bdmg+(M_Random()%3);
+  int damage = bdmg;
   angle_t angle = mo->angle;
 
   //Muskets are never accurate!
@@ -706,7 +706,7 @@ void A_FireShotgun(player_t *player, pspdef_t *psp)
 
   P_BulletSlope(player->mo);
 
-  P_MusketShot(player->mo, 12, 75);
+  P_MusketShot(player->mo, 12, 40);
 }
 
 //

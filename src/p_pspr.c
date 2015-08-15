@@ -517,6 +517,42 @@ void A_Punch(player_t *player, pspdef_t *psp)
 }
 
 //
+// A_Sword
+// Basically a more powerful, slower version of the punch.
+//
+
+void A_Sword(player_t *player, pspdef_t *psp)
+{
+  angle_t angle;
+  int t, slope, damage = (P_Random(pr_punch)%5+35)<<1;
+
+  angle = player->mo->angle;
+
+  // killough 5/5/98: remove dependence on order of evaluation:
+  t = P_Random(pr_punchangle);
+  angle += (t - P_Random(pr_punchangle))<<18;
+
+  /* killough 8/2/98: make autoaiming prefer enemies */
+  if (!mbf_features ||
+      (slope = P_AimLineAttack(player->mo, angle, MELEERANGE, MF_FRIEND),
+       !linetarget))
+    slope = P_AimLineAttack(player->mo, angle, MELEERANGE, 0);
+
+  P_LineAttack(player->mo, angle, MELEERANGE, slope, damage);
+
+  if (!linetarget)
+    return;
+
+  S_StartSound(player->mo, sfx_punch);
+
+  // turn to face target
+
+  player->mo->angle = R_PointToAngle2(player->mo->x, player->mo->y,
+                                      linetarget->x, linetarget->y);
+  R_SmoothPlaying_Reset(player); // e6y
+}
+
+//
 // A_Saw
 //
 
@@ -644,14 +680,15 @@ static void P_GunShot(mobj_t *mo, boolean accurate)
 ///
 /// P_MusketShot
 ///
-static void P_MusketShot(mobj_t *mo)
+static void P_MusketShot(mobj_t *mo, int spread, int bdmg)
 {
-  int damage = 85*(P_Random(pr_gunshot)%3+1);
+  int damage = bdmg+(M_Random()%3);
   angle_t angle = mo->angle;
 
   //Muskets are never accurate!
+  //Use spread var to set accuracy
   int t = P_Random(pr_misfire);
-  angle += (t - P_Random(pr_misfire))<<18;
+  angle += (t - P_Random(pr_misfire))<<spread;
 
   P_LineAttack(mo, angle, MISSILERANGE, bulletslope, damage);
 }
@@ -669,7 +706,7 @@ void A_FirePistol(player_t *player, pspdef_t *psp)
 
   A_FireSomething(player,0);                                      // phares
   P_BulletSlope(player->mo);
-  P_MusketShot(player->mo);
+  P_MusketShot(player->mo, 20, 50);
 
   player->pendingweapon = wp_pistol;
 }
@@ -691,8 +728,7 @@ void A_FireShotgun(player_t *player, pspdef_t *psp)
 
   P_BulletSlope(player->mo);
 
-  for (i=0; i<7; i++)
-    P_GunShot(player->mo, false);
+  P_MusketShot(player->mo, 12, 75);
 }
 
 //

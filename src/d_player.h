@@ -134,9 +134,14 @@ typedef struct player_s
   weapontype_t        pendingweapon;
 
   boolean             weaponowned[NUMWEAPONS];
+  //weapon ready states
   boolean             weaponloaded[NUMWEAPONS];
+  boolean	      reloading;
   int                 ammo[NUMAMMO];
   int                 maxammo[NUMAMMO];
+
+  int                 steptime;
+  int                 stepcounter;
 
   // True if button down last tic.
   int                 attackdown;

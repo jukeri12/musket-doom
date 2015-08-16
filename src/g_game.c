@@ -1048,10 +1048,12 @@ void G_PlayerReborn (int player)
   p->weaponowned[wp_fist] = true;
   p->weaponowned[wp_pistol] = true;
   p->weaponowned[wp_shotgun] = true;
+  p->weaponloaded[wp_fist] = true;
   p->weaponloaded[wp_pistol] = true;
   p->weaponloaded[wp_shotgun] = true;
   p->ammo[am_clip] = 10; // Ty 03/12/98 - use dehacked values
   p->ammo[am_shell] = 4;
+
 
   for (i=0 ; i<NUMAMMO ; i++)
     p->maxammo[i] = maxammo[i];

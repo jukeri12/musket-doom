@@ -41,6 +41,8 @@
 #include "p_user.h"
 #include "r_demo.h"
 #include "r_fps.h"
+#include "p_pspr.h"
+#include "sounds.h"
 
 // Index of the special effects (INVUL inverse) map.
 
@@ -131,7 +133,9 @@ void P_CalcHeight (player_t* player)
     else
 
   if (player->bob > MAXBOB)
+    {
     player->bob = MAXBOB;
+    }
 
   if (!onground || player->cheats & CF_NOMOMENTUM)
     {
@@ -225,22 +229,45 @@ void P_MovePlayer (player_t* player)
         int bobfactor =
           friction < ORIG_FRICTION ? movefactor : ORIG_FRICTION_FACTOR;
 
-	/*Musket Doom: Modified movement speed to something more realistic*/
+	/*Musket Doom: Modified movement speed to something more realistic
+	 * slow movement if reloading */
         if (cmd->forwardmove)
         {
+	  player->steptime += 1;
           P_Bob(player,mo->angle,cmd->forwardmove*bobfactor/4);
-          P_Thrust(player,mo->angle,cmd->forwardmove*movefactor/4);
+	  if (player->reloading)
+            P_Thrust(player,mo->angle,cmd->forwardmove*movefactor/10);
+	  else
+	    P_Thrust(player,mo->angle,cmd->forwardmove*movefactor/4);
         }
 
         if (cmd->sidemove)
         {
+	  player->steptime += 1;
           P_Bob(player,mo->angle-ANG90,cmd->sidemove*bobfactor/4);
-          P_Thrust(player,mo->angle-ANG90,cmd->sidemove*movefactor/4);
+	  if (player->reloading)
+            P_Thrust(player,mo->angle-ANG90,cmd->sidemove*movefactor/10);
+	  else
+	    P_Thrust(player,mo->angle-ANG90,cmd->sidemove*movefactor/4);
         }
       }
       if (mo->state == states+S_PLAY)
         P_SetMobjState(mo,S_PLAY_RUN1);
     }
+
+    //play step sounds according to ground (in the future)
+    if (player->steptime > 20 && player->stepcounter == 0)
+	{
+	  S_StartSound(player->mo, sfx_fstep1);
+	  player->steptime = 0;
+	  player->stepcounter = 1;
+	}
+    else if (player->steptime > 20 && player->stepcounter == 1)
+	{
+	  S_StartSound(player->mo, sfx_fstep2);
+	  player->steptime = 0;
+	  player->stepcounter = 0;
+	}
 }
 
 #define ANG5 (ANG90/18)
@@ -415,7 +442,7 @@ void P_PlayerThink (player_t* player)
   //check for reload
   if (cmd->buttons & BT_USE)
     {
-       player->weaponloaded[player->readyweapon] = true;
+       A_ReloadGun(player);
     }
 
   // cycle psprites

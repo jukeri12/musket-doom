@@ -234,6 +234,10 @@ sfxinfo_t S_sfx[] = {
   { "skeatk", false, 70, 0, -1, -1, 0 },
   { "radio", false, 60, 0, -1, -1, 0 },
   { "swing", false, 64, 0, -1, -1, 0 },
+  { "fstep1", false, 64, 0, -1, -1, 0 },
+  { "fstep2", false, 64, 0, -1, -1, 0 },
+  { "fstep3", false, 64, 0, -1, -1, 0 },
+  { "fstep4", false, 64, 0, -1, -1, 0 },
 
 #ifdef DOGS
   // killough 11/98: dog sounds

@@ -104,6 +104,7 @@ void A_FireShotgun();
 void A_Light2();
 void A_FireShotgun2();
 void A_CheckReload();
+void A_ReloadGun();
 void A_OpenShotgun2();
 void A_LoadShotgun2();
 void A_CloseShotgun2();

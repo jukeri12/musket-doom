@@ -44,8 +44,8 @@
 #include "d_event.h"
 #include "r_demo.h"
 
-#define LOWERSPEED   (FRACUNIT*3)
-#define RAISESPEED   (FRACUNIT*3)
+#define LOWERSPEED   (FRACUNIT*1)
+#define RAISESPEED   (FRACUNIT*8)
 #define WEAPONBOTTOM (FRACUNIT*128)
 #define WEAPONTOP    (FRACUNIT*32)
 
@@ -295,7 +295,9 @@ static void P_FireWeapon(player_t *player)
   newstate = weaponinfo[player->readyweapon].atkstate;
   P_SetPsprite(player, ps_weapon, newstate);
   P_NoiseAlert(player->mo, player->mo);
-  player->weaponloaded[player->readyweapon] = false;
+  //Melee doesn't need to be reloaded
+  if (player->readyweapon != wp_fist)
+     player->weaponloaded[player->readyweapon] = false;
 }
 
 //
@@ -398,6 +400,23 @@ void A_CheckReload(player_t *player, pspdef_t *psp)
   }
 }
 
+
+///
+///   A_ReloadGun
+///
+///  This is very much a hack so I think it eventually will need improvements or total reimplementation
+///  Of course real reload animations would be much better.
+///
+void A_ReloadGun(player_t *player)
+{
+  if (player->readyweapon != wp_fist)
+  {
+    player->weaponloaded[player->readyweapon] = true;
+    player->pendingweapon = player->readyweapon; //Think this could be glitched and abused?
+    player->reloading = true;
+  }
+}
+
 //
 // A_Lower
 // Lowers current weapon,
@@ -452,6 +471,9 @@ void A_Raise(player_t *player, pspdef_t *psp)
   //  so change to the ready state.
 
   newstate = weaponinfo[player->readyweapon].readystate;
+
+  // if we were reloading, set state to not reloading
+  player->reloading = false;
 
   P_SetPsprite(player, ps_weapon, newstate);
 }
@@ -686,7 +708,6 @@ void A_FirePistol(player_t *player, pspdef_t *psp)
   P_BulletSlope(player->mo);
   P_MusketShot(player->mo, 19, 40);
 
-  player->pendingweapon = wp_pistol;
 }
 
 //

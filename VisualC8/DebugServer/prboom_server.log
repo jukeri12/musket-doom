@@ -1,4 +1,4 @@
-﻿Build started 15.8.2015 15:09:21.
+﻿Build started 16.8.2015 14:12:06.
      1>Project "C:\Users\Johuotar\musket-doom\VisualC8\prboom_server.vcxproj" on node 3 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I../VisualC8 /I../src /ZI /nologo /W3 /WX- /Od /Oy- /D _DEBUG /D WIN32 /D _CONSOLE /D HAVE_CONFIG_H /D PRBOOM_SERVER /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\DebugServer/" /Fd".\DebugServer/vc120.pdb" /Gd /TC /analyze- /errorReport:prompt ..\src\d_server.c ..\src\SDL\i_network.c ..\src\SDL\i_system.c ..\src\SDL\SDL_win32_main.c
@@ -18,4 +18,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.35
+Time Elapsed 00:00:01.36

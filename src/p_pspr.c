@@ -684,7 +684,7 @@ void A_FirePistol(player_t *player, pspdef_t *psp)
 
   A_FireSomething(player,0);                                      // phares
   P_BulletSlope(player->mo);
-  P_MusketShot(player->mo, 20, 50);
+  P_MusketShot(player->mo, 19, 40);
 
   player->pendingweapon = wp_pistol;
 }
@@ -706,7 +706,7 @@ void A_FireShotgun(player_t *player, pspdef_t *psp)
 
   P_BulletSlope(player->mo);
 
-  P_MusketShot(player->mo, 12, 40);
+  P_MusketShot(player->mo, 17, 50);
 }
 
 //

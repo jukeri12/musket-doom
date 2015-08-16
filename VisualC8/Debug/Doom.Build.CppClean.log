@@ -27,6 +27,7 @@ c:\users\johuotar\musket-doom\visualc8\debug\p_spec.obj
 c:\users\johuotar\musket-doom\visualc8\debug\p_switch.obj
 c:\users\johuotar\musket-doom\visualc8\debug\p_telept.obj
 c:\users\johuotar\musket-doom\visualc8\debug\p_tick.obj
+c:\users\johuotar\musket-doom\visualc8\debug\p_user.obj
 c:\users\johuotar\musket-doom\visualc8\debug\r_bsp.obj
 c:\users\johuotar\musket-doom\visualc8\debug\r_data.obj
 c:\users\johuotar\musket-doom\visualc8\debug\r_demo.obj
@@ -75,6 +76,16 @@ c:\users\johuotar\musket-doom\visualc8\debug\hu_stuff.obj
 c:\users\johuotar\musket-doom\visualc8\debug\info.obj
 c:\users\johuotar\musket-doom\visualc8\debug\lprintf.obj
 c:\users\johuotar\musket-doom\visualc8\debug\md5.obj
+c:\users\johuotar\musket-doom\visualc8\debug\prboom.ilk
+c:\users\johuotar\musket-doom\visualc8\debug\prboom.exe
+c:\users\johuotar\musket-doom\visualc8\debug\prboom.pdb
+c:\users\johuotar\musket-doom\visualc8\debug\icons.res
 c:\users\johuotar\musket-doom\visualc8\debug\doom.tlog\cl.command.1.tlog
 c:\users\johuotar\musket-doom\visualc8\debug\doom.tlog\cl.read.1.tlog
 c:\users\johuotar\musket-doom\visualc8\debug\doom.tlog\cl.write.1.tlog
+c:\users\johuotar\musket-doom\visualc8\debug\doom.tlog\link.command.1.tlog
+c:\users\johuotar\musket-doom\visualc8\debug\doom.tlog\link.read.1.tlog
+c:\users\johuotar\musket-doom\visualc8\debug\doom.tlog\link.write.1.tlog
+c:\users\johuotar\musket-doom\visualc8\debug\doom.tlog\rc.command.1.tlog
+c:\users\johuotar\musket-doom\visualc8\debug\doom.tlog\rc.read.1.tlog
+c:\users\johuotar\musket-doom\visualc8\debug\doom.tlog\rc.write.1.tlog

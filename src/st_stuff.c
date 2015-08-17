@@ -758,12 +758,13 @@ static void ST_doPaletteStuff(void)
   }
 }
 
+//Modified for musket-doom
 static void ST_drawWidgets(boolean refresh)
 {
   int i;
 
   // used by w_arms[] widgets
-  st_armson = st_statusbaron && !deathmatch;
+  /*st_armson = st_statusbaron && !deathmatch;*/
 
   // used by w_frags widget
   st_fragson = deathmatch && st_statusbaron;
@@ -781,7 +782,7 @@ static void ST_drawWidgets(boolean refresh)
   for (i=0;i<4;i++)
     {
       STlib_updateNum(&w_ammo[i], CR_DEFAULT, refresh);   //jff 2/16/98 no xlation
-      STlib_updateNum(&w_maxammo[i], CR_DEFAULT, refresh);
+      //STlib_updateNum(&w_maxammo[i], CR_DEFAULT, refresh);
     }
 
   //jff 2/16/98 make color of health depend on amount
@@ -807,13 +808,13 @@ static void ST_drawWidgets(boolean refresh)
   //e6y: moved to ST_refreshBackground() for correct single-pass stretching
   //STlib_updateBinIcon(&w_armsbg, refresh);
 
-  for (i=0;i<6;i++)
-    STlib_updateMultIcon(&w_arms[i], refresh);
+  /*for (i=0;i<6;i++)
+    STlib_updateMultIcon(&w_arms[i], refresh);*/
 
   STlib_updateMultIcon(&w_faces, refresh);
 
-  for (i=0;i<3;i++)
-    STlib_updateMultIcon(&w_keyboxes[i], refresh);
+  /*for (i=0;i<3;i++)
+    STlib_updateMultIcon(&w_keyboxes[i], refresh);*/
 
   STlib_updateNum(&w_frags, CR_DEFAULT, refresh);
 

@@ -122,7 +122,7 @@
 // AMMO number pos.
 #define ST_AMMOWIDTH            3
 // proff 08/18/98: Changed for high-res
-#define ST_AMMOX                (ST_X+44)
+#define ST_AMMOX                (ST_X+245)
 #define ST_AMMOY                (ST_Y+3)
 //#define ST_AMMOX                44
 //#define ST_AMMOY                171
@@ -130,16 +130,16 @@
 // HEALTH number pos.
 #define ST_HEALTHWIDTH          3
 // proff 08/18/98: Changed for high-res
-#define ST_HEALTHX              (ST_X+90)
+#define ST_HEALTHX              (ST_X+145)
 #define ST_HEALTHY              (ST_Y+3)
 //#define ST_HEALTHX              90
 //#define ST_HEALTHY              171
 
 // Weapon pos.
 // proff 08/18/98: Changed for high-res
-#define ST_ARMSX                (ST_X+111)
+#define ST_ARMSX                (ST_X+11)
 #define ST_ARMSY                (ST_Y+4)
-#define ST_ARMSBGX              (ST_X+104)
+#define ST_ARMSBGX              (ST_X+14)
 #define ST_ARMSBGY              (ST_Y)
 //#define ST_ARMSX                111
 //#define ST_ARMSY                172
@@ -186,8 +186,8 @@
 //#define ST_KEY2Y                191
 
 // Ammunition counter.
-#define ST_AMMO0WIDTH           3
-#define ST_AMMO0HEIGHT          6
+#define ST_AMMO0WIDTH           8
+#define ST_AMMO0HEIGHT          12
 // proff 08/18/98: Changed for high-res
 #define ST_AMMO0X               (ST_X+288)
 #define ST_AMMO0Y               (ST_Y+5)
@@ -393,8 +393,8 @@ static void ST_refreshBackground(void)
       if (V_GetMode() == VID_MODEGL)
         y=ST_Y;
       V_DrawNumPatch(ST_X, y, BG, stbarbg.lumpnum, CR_DEFAULT, VPT_STRETCH);
-      if (st_armson)
-        V_DrawNumPatch(ST_ARMSBGX, y, BG, armsbg.lumpnum, CR_DEFAULT, VPT_STRETCH);
+      /*if (st_armson)
+        V_DrawNumPatch(ST_ARMSBGX, y, BG, armsbg.lumpnum, CR_DEFAULT, VPT_STRETCH);*/
 
       // killough 3/7/98: make face background change with displayplayer
       if (netgame)
@@ -795,6 +795,7 @@ static void ST_drawWidgets(boolean refresh)
   else
     STlib_updatePercent(&w_health, CR_BLUE2, refresh); //killough 2/28/98
 
+  /*
   //jff 2/16/98 make color of armor depend on amount
   if (*w_armor.n.num<armor_red)
     STlib_updatePercent(&w_armor, CR_RED, refresh);
@@ -804,16 +805,17 @@ static void ST_drawWidgets(boolean refresh)
     STlib_updatePercent(&w_armor, CR_GREEN, refresh);
   else
     STlib_updatePercent(&w_armor, CR_BLUE2, refresh); //killough 2/28/98
+  */
 
   //e6y: moved to ST_refreshBackground() for correct single-pass stretching
   //STlib_updateBinIcon(&w_armsbg, refresh);
 
   /*for (i=0;i<6;i++)
-    STlib_updateMultIcon(&w_arms[i], refresh);*/
+    STlib_updateMultIcon(&w_arms[i], refresh);
 
   STlib_updateMultIcon(&w_faces, refresh);
 
-  /*for (i=0;i<3;i++)
+    for (i=0;i<3;i++)
     STlib_updateMultIcon(&w_keyboxes[i], refresh);*/
 
   STlib_updateNum(&w_frags, CR_DEFAULT, refresh);

@@ -225,14 +225,14 @@ void STlib_updatePercent
   int cm,
   int refresh )
 {
-  if (*per->n.on && (refresh || (per->n.oldnum != *per->n.num))) {
+  /*if (*per->n.on && (refresh || (per->n.oldnum != *per->n.num))) {
     // killough 2/21/98: fix percents not updated;
-    /* CPhipps - make %'s only be updated if number changed */
+    // CPhipps - make %'s only be updated if number changed
     // CPhipps - patch drawing updated
     V_DrawNumPatch(per->n.x, per->n.y, FG, per->p->lumpnum,
        sts_pct_always_gray ? CR_GRAY : cm,
        (sts_always_red ? VPT_NONE : VPT_TRANS) | VPT_STRETCH);
-  }
+  }*/
 
   STlib_updateNum(&per->n, cm, refresh);
 }

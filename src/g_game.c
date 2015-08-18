@@ -1043,7 +1043,7 @@ void G_PlayerReborn (int player)
 
   p->usedown = p->attackdown = true;  // don't do anything immediately
   p->playerstate = PST_LIVE;
-  p->health = initial_health;  // Ty 03/12/98 - use dehacked values
+  p->health = 100;  // Ty 03/12/98 - use dehacked values
   p->readyweapon = p->pendingweapon = wp_pistol;
   p->weaponowned[wp_fist] = true;
   p->weaponowned[wp_pistol] = true;

@@ -411,9 +411,12 @@ void A_ReloadGun(player_t *player)
 {
   if (player->readyweapon != wp_fist)
   {
-    player->weaponloaded[player->readyweapon] = true;
-    player->pendingweapon = player->readyweapon; //Think this could be glitched and abused?
-    player->reloading = true;
+    if (!player->weaponloaded[player->readyweapon])
+    {
+       player->weaponloaded[player->readyweapon] = true;
+       player->pendingweapon = player->readyweapon; //Think this could be glitched and abused?
+       player->reloading = true;
+    }
   }
 }
 

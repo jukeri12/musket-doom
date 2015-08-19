@@ -543,10 +543,14 @@ void A_Punch(player_t *player, pspdef_t *psp)
 
   P_LineAttack(player->mo, angle, MELEERANGE, slope, damage);
 
+  //Swish swash sound
+  S_StartSound(player->mo, sfx_punch);
+
   if (!linetarget)
     return;
 
-  S_StartSound(player->mo, sfx_punch);
+  //make hitsound
+  S_StartSound(player->mo, sfx_swdhit);
 
   // turn to face target
 

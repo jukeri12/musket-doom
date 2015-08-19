@@ -289,7 +289,7 @@ typedef enum {
   sfx_skesit,
   sfx_skeatk,
   sfx_radio,
-  sfx_swing,
+  sfx_swdhit,
   sfx_fstep1,
   sfx_fstep2,
   sfx_fstep3,

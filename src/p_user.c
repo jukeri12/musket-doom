@@ -233,7 +233,6 @@ void P_MovePlayer (player_t* player)
 	 * slow movement if reloading */
         if (cmd->forwardmove)
         {
-	  player->steptime += 1;
           P_Bob(player,mo->angle,cmd->forwardmove*bobfactor/4);
 	  if (player->reloading)
             P_Thrust(player,mo->angle,cmd->forwardmove*movefactor/10);
@@ -243,13 +242,17 @@ void P_MovePlayer (player_t* player)
 
         if (cmd->sidemove)
         {
-	  player->steptime += 1;
           P_Bob(player,mo->angle-ANG90,cmd->sidemove*bobfactor/4);
 	  if (player->reloading)
             P_Thrust(player,mo->angle-ANG90,cmd->sidemove*movefactor/10);
 	  else
 	    P_Thrust(player,mo->angle-ANG90,cmd->sidemove*movefactor/4);
         }
+	// footstep counter (ADD RUNNING STEPS HERE TOO)
+        if (cmd->forwardmove && cmd->sidemove)
+	  player->steptime += 1;
+        else if (cmd->forwardmove || cmd->sidemove)
+	  player->steptime += 1;
       }
       if (mo->state == states+S_PLAY)
         P_SetMobjState(mo,S_PLAY_RUN1);

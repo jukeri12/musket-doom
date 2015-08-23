@@ -40,4 +40,8 @@ A musketeering multiplayer game based on PrBoom and FreeDoom: Phase 1.
 
 *Humanoid Low Poly Mesh (With Basic Face) from OpenGameArt.org by Shingox (Public Domain)
 
+*FreeDoom: Phase 1 .WAD -file from the FreeDoom project (under a BSD -license, see README.freedoom)
+
+*LibSDL 1.2 under LGPLv2
+
 

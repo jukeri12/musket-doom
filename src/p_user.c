@@ -248,7 +248,7 @@ void P_MovePlayer (player_t* player)
 	  else
 	    P_Thrust(player,mo->angle-ANG90,cmd->sidemove*movefactor/4);
         }
-	// footstep counter (ADD RUNNING STEPS HERE TOO)
+	// footstep counter (ADD RUNNING STEPS HERE TOO)      -jukeri12  22.8.2015
         if (cmd->forwardmove && cmd->sidemove)
 	  player->steptime += 1;
         else if (cmd->forwardmove || cmd->sidemove)
@@ -258,7 +258,7 @@ void P_MovePlayer (player_t* player)
         P_SetMobjState(mo,S_PLAY_RUN1);
     }
 
-    //play step sounds according to ground (in the future)
+    //play step sounds according to ground (in the future)    -jukeri12  16.8.2015
     if (player->steptime > 20 && player->stepcounter == 0)
 	{
 	  S_StartSound(player->mo, sfx_fstep1);
@@ -442,7 +442,7 @@ void P_PlayerThink (player_t* player)
   else
     player->usedown = false;
 
-  //check for reload
+  //check for reload      -jukeri12 18.8.2015
   if (cmd->buttons & BT_USE)
     {
        A_ReloadGun(player);

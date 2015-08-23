@@ -759,6 +759,7 @@ static void ST_doPaletteStuff(void)
 }
 
 //Modified for musket-doom
+// -jukeri12    18.8.2015
 static void ST_drawWidgets(boolean refresh)
 {
   int i;

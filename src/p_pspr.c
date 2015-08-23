@@ -295,7 +295,7 @@ static void P_FireWeapon(player_t *player)
   newstate = weaponinfo[player->readyweapon].atkstate;
   P_SetPsprite(player, ps_weapon, newstate);
   P_NoiseAlert(player->mo, player->mo);
-  //Melee doesn't need to be reloaded
+  //Melee doesn't need to be reloaded 	-jukeri12 18.8.2015
   if (player->readyweapon != wp_fist)
      player->weaponloaded[player->readyweapon] = false;
 }
@@ -406,6 +406,7 @@ void A_CheckReload(player_t *player, pspdef_t *psp)
 ///
 ///  This is very much a hack so I think it eventually will need improvements or total reimplementation
 ///  Of course real reload animations would be much better.
+///  -jukeri12 18.5.2015
 ///
 void A_ReloadGun(player_t *player)
 {
@@ -686,6 +687,9 @@ static void P_GunShot(mobj_t *mo, boolean accurate)
 
 ///
 /// P_MusketShot
+/// variation of P_GunShot
+/// A never accurate version of gunshot for musket weaponry
+/// -jukeri12 14.8.2015
 ///
 static void P_MusketShot(mobj_t *mo, int spread, int bdmg)
 {
@@ -702,8 +706,9 @@ static void P_MusketShot(mobj_t *mo, int spread, int bdmg)
 
 //
 // A_FirePistol
+// Modded to be a musket pistol
+// -jukeri12 18.8.2015
 //
-
 void A_FirePistol(player_t *player, pspdef_t *psp)
 {
   S_StartSound(player->mo, sfx_pistol);

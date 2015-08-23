@@ -379,6 +379,8 @@ void G_BuildTiccmd(ticcmd_t* cmd)
     }
 
   //reload current weapon in musket doom
+  //currently same as BT_USE command
+  //jukeri12 18.8.2015
  /* if (gamekeydown[key_weapon5])
     {
       cmd->buttons |= BT_RELOAD;

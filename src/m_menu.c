@@ -312,8 +312,8 @@ menu_t NewDef;                                              // phares 5/04/98
 enum
 {
   newgame = 0,
-  loadgame,
-  savegame,
+  //loadgame,
+  //savegame,
   options,
   readthis,
   quitdoom,
@@ -327,13 +327,14 @@ enum
 // the program which takes over when an item is selected, and the hotkey
 // associated with the item.
 //
+// modified 26.8.2015  -jukeri12
 
 menuitem_t MainMenu[]=
 {
   {1,"M_NGAME", M_NewGame, 'n'},
   {1,"M_OPTION",M_Options, 'o'},
-  {1,"M_LOADG", M_LoadGame,'l'},
-  {1,"M_SAVEG", M_SaveGame,'s'},
+  //{1,"M_LOADG", M_LoadGame,'l'},
+  //{1,"M_SAVEG", M_SaveGame,'s'},
   // Another hickup with Special edition.
   {1,"M_RDTHIS",M_ReadThis,'r'},
   {1,"M_QUITG", M_QuitDOOM,'q'}

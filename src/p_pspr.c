@@ -44,7 +44,7 @@
 #include "d_event.h"
 #include "r_demo.h"
 
-#define LOWERSPEED   (FRACUNIT*1)
+#define LOWERSPEED   (FRACUNIT*8)
 #define RAISESPEED   (FRACUNIT*8)
 #define WEAPONBOTTOM (FRACUNIT*128)
 #define WEAPONTOP    (FRACUNIT*32)
@@ -429,7 +429,15 @@ void A_ReloadGun(player_t *player)
 
 void A_Lower(player_t *player, pspdef_t *psp)
 {
-  psp->sy += LOWERSPEED;
+
+  //Added reload speeds for Musket Doom
+  //-jukeri12  26.8.2015
+  if (player->readyweapon==wp_pistol && player->reloading==true)
+     psp->sy += LOWERSPEED/6;
+  else if (player->readyweapon==wp_shotgun && player->reloading==true)
+     psp->sy += LOWERSPEED/8;
+  else
+     psp->sy += LOWERSPEED/2;
 
   // Is already down.
   if (psp->sy < WEAPONBOTTOM)
@@ -520,12 +528,13 @@ void A_GunFlash(player_t *player, pspdef_t *psp)
 
 //
 // A_Punch
-//
+// Modified for use as sword in Musket Doom
+// -jukeri12   26.8.2015
 
 void A_Punch(player_t *player, pspdef_t *psp)
 {
   angle_t angle;
-  int t, slope, damage = (P_Random(pr_punch)%10+1)<<1;
+  int t, slope, damage = (P_Random(pr_punch)+1)<<1;
 
   if (player->powers[pw_strength])
     damage *= 10;
@@ -538,11 +547,11 @@ void A_Punch(player_t *player, pspdef_t *psp)
 
   /* killough 8/2/98: make autoaiming prefer enemies */
   if (!mbf_features ||
-      (slope = P_AimLineAttack(player->mo, angle, MELEERANGE, MF_FRIEND),
+      (slope = P_AimLineAttack(player->mo, angle, MELEERANGE*1.25, MF_FRIEND),
        !linetarget))
-    slope = P_AimLineAttack(player->mo, angle, MELEERANGE, 0);
+    slope = P_AimLineAttack(player->mo, angle, MELEERANGE*1.25, 0);
 
-  P_LineAttack(player->mo, angle, MELEERANGE, slope, damage);
+  P_LineAttack(player->mo, angle, MELEERANGE*1.25, slope, damage);
 
   //Swish swash sound
   S_StartSound(player->mo, sfx_punch);

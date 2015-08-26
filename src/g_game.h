@@ -158,7 +158,7 @@ extern int  key_map_rotate; // cph - map rotation
 extern int  key_map_overlay;// cph - map overlay
 extern int  key_screenshot;    // killough 2/22/98 -- add key for screenshot
 extern int  autorun;           // always running?                   // phares
-
+extern int  key_reload;        //reload key 26.8.2015 -jukeri12
 extern int  defaultskill;      //jff 3/24/98 default skill
 extern boolean haswolflevels;  //jff 4/18/98 wolf levels present
 

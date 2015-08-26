@@ -379,13 +379,12 @@ void G_BuildTiccmd(ticcmd_t* cmd)
     }
 
   //reload current weapon in musket doom
-  //currently same as BT_USE command
-  //jukeri12 18.8.2015
- /* if (gamekeydown[key_weapon5])
+  //jukeri12 26.8.2015
+ if (gamekeydown[key_reload])
     {
       cmd->buttons |= BT_RELOAD;
     }
-  */
+
   // Toggle between the top 2 favorite weapons.                   // phares
   // If not currently aiming one of these, switch to              // phares
   // the favorite. Only switch if you possess the weapon.         // phares

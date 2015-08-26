@@ -443,7 +443,7 @@ void P_PlayerThink (player_t* player)
     player->usedown = false;
 
   //check for reload      -jukeri12 18.8.2015
-  if (cmd->buttons & BT_USE)
+  if (cmd->buttons & BT_RELOAD)
     {
        A_ReloadGun(player);
     }

@@ -38,6 +38,7 @@ r_main.o: r_main.c /usr/include/stdc-predef.h ../config.h doomstat.h \
  r_patch.h r_things.h r_draw.h r_plane.h r_bsp.h m_bbox.h r_sky.h \
  v_video.h gl_struct.h lprintf.h st_stuff.h d_event.h i_main.h i_system.h \
  g_game.h r_demo.h r_fps.h /usr/include/math.h \
+ /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
  /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h \
  /usr/include/bits/huge_vall.h /usr/include/bits/inf.h \
  /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
@@ -253,6 +254,10 @@ r_demo.h:
 r_fps.h:
 
 /usr/include/math.h:
+
+/usr/include/bits/math-vector.h:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
 
 /usr/include/bits/huge_val.h:
 

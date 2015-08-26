@@ -2238,6 +2238,9 @@ setup_menu_t keys_settings2[] =  // Key Binding screen strings
   {0,S_SKIP|S_END,m_null}
 };
 
+//modified to accommodate new keybinds (such as reload)
+//-jukeri12  26.8.2015
+
 setup_menu_t keys_settings3[] =  // Key Binding screen strings
 {
   {"WEAPONS" ,S_SKIP|S_TITLE,m_null,KB_X,KB_Y},
@@ -2252,6 +2255,7 @@ setup_menu_t keys_settings3[] =  // Key Binding screen strings
   {"SSG"     ,S_KEY       ,m_scrn,KB_X,KB_Y+ 9*8,{&key_weapon9}},
   {"BEST"    ,S_KEY       ,m_scrn,KB_X,KB_Y+10*8,{&key_weapontoggle}},
   {"FIRE"    ,S_KEY       ,m_scrn,KB_X,KB_Y+11*8,{&key_fire},&mousebfire,&joybfire},
+  {"RELOAD"  ,S_KEY	  ,m_scrn,KB_X,KB_Y+12*8,{&key_reload}},
 
   {"<- PREV",S_SKIP|S_PREV,m_null,KB_PREV,KB_Y+20*8, {keys_settings2}},
   {"NEXT ->",S_SKIP|S_NEXT,m_null,KB_NEXT,KB_Y+20*8, {keys_settings4}},

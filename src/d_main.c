@@ -535,10 +535,10 @@ void D_DoAdvanceDemo(void)
   gamestate = GS_DEMOSCREEN;
 
   if (netgame && !demoplayback) {
-    demosequence = -1;
+    demosequence = 0;
   } else
    if (!demostates[++demosequence][gamemode].func)
-    demosequence = -1;
+    demosequence = 0;
   demostates[demosequence][gamemode].func
     (demostates[demosequence][gamemode].name);
 }

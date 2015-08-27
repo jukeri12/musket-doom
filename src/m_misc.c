@@ -383,7 +383,7 @@ default_t defaults[] =
   {"mouse_sensitivity_horiz",{&mouseSensitivity_horiz},{10},0,UL,
    def_int,ss_none}, /* adjust horizontal (x) mouse sensitivity killough/mead */
   //jff 4/3/98 allow unlimited sensitivity
-  {"mouse_sensitivity_vert",{&mouseSensitivity_vert},{10},0,UL,
+  {"mouse_sensitivity_vert",{&mouseSensitivity_vert},{0},0,UL,
    def_int,ss_none}, /* adjust vertical (y) mouse sensitivity killough/mead */
   //jff 3/8/98 allow -1 in mouse bindings to disable mouse function
   {"mouseb_fire",{&mousebfire},{0},-1,MAX_MOUSEB,
@@ -404,9 +404,9 @@ default_t defaults[] =
    0,MAX_KEY,def_key,ss_keys}, // key to turn right
   {"key_left",        {&key_left},           {KEYD_LEFTARROW} ,
    0,MAX_KEY,def_key,ss_keys}, // key to turn left
-  {"key_up",          {&key_up},             {KEYD_UPARROW}   ,
+  {"key_up",          {&key_up},             {'w'}   ,
    0,MAX_KEY,def_key,ss_keys}, // key to move forward
-  {"key_down",        {&key_down},           {KEYD_DOWNARROW},
+  {"key_down",        {&key_down},           {'s'},
    0,MAX_KEY,def_key,ss_keys}, // key to move backward
   {"key_menu_right",  {&key_menu_right},     {KEYD_RIGHTARROW},// phares 3/7/98
    0,MAX_KEY,def_key,ss_keys}, // key to move right in a menu  //     |
@@ -422,12 +422,12 @@ default_t defaults[] =
    0,MAX_KEY,def_key,ss_keys}, // key to leave a menu      ,   // phares 3/7/98
   {"key_menu_enter",  {&key_menu_enter},     {KEYD_ENTER}     ,
    0,MAX_KEY,def_key,ss_keys}, // key to select from menu
-  {"key_strafeleft",  {&key_strafeleft},     {','}           ,
+  {"key_strafeleft",  {&key_strafeleft},     {'a'}           ,
    0,MAX_KEY,def_key,ss_keys}, // key to strafe left
-  {"key_straferight", {&key_straferight},    {'.'}           ,
+  {"key_straferight", {&key_straferight},    {'d'}           ,
    0,MAX_KEY,def_key,ss_keys}, // key to strafe right
 
-  {"key_fire",        {&key_fire},           {KEYD_RCTRL}     ,
+  {"key_fire",        {&key_fire},           {NULL}     ,
    0,MAX_KEY,def_key,ss_keys}, // duh
   {"key_use",         {&key_use},            {' '}           ,
    0,MAX_KEY,def_key,ss_keys}, // key to open a door, use a switch
@@ -531,6 +531,8 @@ default_t defaults[] =
    0,MAX_KEY,def_key,ss_keys}, // key to switch to weapon 8 (chainsaw)        //    |
   {"key_weapon9",     {&key_weapon9},         {'9'}            ,
    0,MAX_KEY,def_key,ss_keys}, // key to switch to weapon 9 (supershotgun)    // phares
+  {"key_reload",      {&key_reload},          {'r'}            ,
+   0,MAX_KEY, def_key,ss_keys}, // Key for reloading  -jukeri12  27.8.2015
 
   // killough 2/22/98: screenshot key
   {"key_screenshot",  {&key_screenshot},      {'*'}            ,
@@ -941,7 +943,7 @@ void M_LoadDefaults (void)
 #else
     sprintf ((char *)defaultfile,
 #endif
-            "%s%s%sboom.cfg", exedir, HasTrailingSlash(exedir) ? "" : "/", 
+            "%s%s%sboom.cfg", exedir, HasTrailingSlash(exedir) ? "" : "/",
 #if ((defined GL_DOOM) && (defined _MSC_VER))
             "gl");
 #else

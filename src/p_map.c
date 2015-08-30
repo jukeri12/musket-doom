@@ -1113,7 +1113,7 @@ void P_HitSlideLine (line_t* ld)
     icyfloor = !compatibility &&
     variable_friction &&
     slidemo->player &&
-    onground && 
+    onground &&
     slidemo->friction > ORIG_FRICTION;
   }
 
@@ -1655,6 +1655,32 @@ void P_LineAttack
   aimslope = slope;
 
   P_PathTraverse(t1->x,t1->y,x2,y2,PT_ADDLINES|PT_ADDTHINGS,PTR_ShootTraverse);
+  }
+
+//
+// P_TraceFront
+//
+// Trace immediate front of player to spawn a smoke puff from muskets
+// -jukeri12  30.8.2015
+void P_TraceFront
+(mobj_t* t1,
+ angle_t angle,
+ fixed_t distance,
+ fixed_t slope)
+  {
+  fixed_t x2;
+  fixed_t y2;
+
+  angle >>= ANGLETOFINESHIFT;
+  shootthing = t1;
+  x2 = t1->x + (distance>>FRACBITS)*finecosine[angle];
+  y2 = t1->y + (distance>>FRACBITS)*finesine[angle];
+  shootz = t1->z + (t1->height>>1) + 8*FRACUNIT;
+  aimslope = slope;
+
+  //P_PathTraverse(t1->x,t1->y,x2,y2,PT_ADDLINES|PT_ADDTHINGS,PTR_ShootTraverse);
+
+  P_SpawnPuff(x2, y2, shootz);
   }
 
 
@@ -2263,7 +2289,7 @@ void P_CreateSecNodeList(mobj_t* thing,fixed_t x,fixed_t y)
   }
 }
 
-/* cphipps 2004/08/30 - 
+/* cphipps 2004/08/30 -
  * Must clear tmthing at tic end, as it might contain a pointer to a removed thinker, or the level might have ended/been ended and we clear the objects it was pointing too. Hopefully we don't need to carry this between tics for sync. */
 void P_MapStart(void) {
 	if (tmthing) I_Error("P_MapStart: tmthing set!");
@@ -2285,7 +2311,7 @@ static void SpechitOverrun(line_t *ld)
   if (compatibility_level == dosdoom_compatibility || compatibility_level == tasdoom_compatibility)
   {
     // e6y
-    // There are no more desyncs in the following dosdoom demos: 
+    // There are no more desyncs in the following dosdoom demos:
     // flsofdth.wad\fod3uv.lmp - http://www.doomworld.com/sda/flsofdth.htm
     // hr.wad\hf181430.lmp - http://www.doomworld.com/tas/hf181430.zip
     // hr.wad\hr181329.lmp - http://www.doomworld.com/tas/hr181329.zip
@@ -2294,13 +2320,13 @@ static void SpechitOverrun(line_t *ld)
     switch(numspechit)
     {
     case 8: break; /* strange cph's code */
-    case 9: 
+    case 9:
       tmfloorz = addr;
       break;
     case 10:
       tmceilingz = addr;
       break;
-      
+
     default:
         lprintf(LO_ERROR, "SpechitOverrun: Warning: unable to emulate"
                           " an overrun where numspechit=%i\n",
@@ -2313,16 +2339,16 @@ static void SpechitOverrun(line_t *ld)
     switch(numspechit)
     {
       case 8: break; /* numspechit, not significant it seems - cph */
-      case 9: 
+      case 9:
       case 10:
       case 11:
       case 12:
         tmbbox[numspechit-9] = addr;
         break;
-      case 13: 
+      case 13:
         nofit = addr;
         break;
-      case 14: 
+      case 14:
         crushchange = addr;
         break;
       default:

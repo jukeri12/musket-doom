@@ -716,7 +716,7 @@ static void P_MusketShot(mobj_t *mo, int spread, int bdmg)
 //
 // A_FirePistol
 // Modded to be a musket pistol
-// -jukeri12 18.8.2015
+// -jukeri12 30.8.2015
 //
 void A_FirePistol(player_t *player, pspdef_t *psp)
 {
@@ -728,6 +728,8 @@ void A_FirePistol(player_t *player, pspdef_t *psp)
   A_FireSomething(player,0);                                      // phares
   P_BulletSlope(player->mo);
   P_MusketShot(player->mo, 19, 40);
+
+  P_TraceFront(player->mo, player->mo->angle, MELEERANGE/2, bulletslope);
 
 }
 

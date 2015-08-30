@@ -1400,6 +1400,26 @@ void P_SpawnBlood(fixed_t x,fixed_t y,fixed_t z,int damage)
     P_SetMobjState (th,S_BLOOD3);
   }
 
+//
+// P_SpawnSmoke
+//
+// A function that spawns smoke from guns and explosions
+// Mostly copied from spawnblood function
+// -jukeri12  30.8.2015
+void P_SpawnSmoke(fixed_t x,fixed_t y,fixed_t z)
+  {
+  mobj_t* th;
+  
+  int t = P_Random(pr_spawnblood);
+  z += (t - P_Random(pr_spawnblood))<<10;
+  th = P_SpawnMobj(x,y,z, MT_BLOOD);
+  th->momz = FRACUNIT*2;
+  th->tics -= P_Random(pr_spawnblood)&3;
+
+  if (th->tics < 1)
+    th->tics = 1;
+
+  }
 
 //
 // P_CheckMissileSpawn

@@ -150,7 +150,8 @@
 
 // Frags pos.
 // proff 08/18/98: Changed for high-res
-#define ST_FRAGSX               (ST_X+138)
+// changed for musket doom statusbar -jukeri12  30.8.2015
+#define ST_FRAGSX               (ST_X+13)
 #define ST_FRAGSY               (ST_Y+3)
 //#define ST_FRAGSX               138
 //#define ST_FRAGSY               171

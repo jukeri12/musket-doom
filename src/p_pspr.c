@@ -751,6 +751,8 @@ void A_FireShotgun(player_t *player, pspdef_t *psp)
   P_BulletSlope(player->mo);
 
   P_MusketShot(player->mo, 17, 50);
+
+  P_TraceFront(player->mo, player->mo->angle, MELEERANGE / 2, bulletslope);
 }
 
 //

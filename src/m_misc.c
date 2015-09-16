@@ -509,8 +509,10 @@ default_t defaults[] =
    0,MAX_KEY,def_key,ss_keys}, // key to chat with player 2
   {"key_chatplayer3", {&destination_keys[2]}, {'b'}            ,
    0,MAX_KEY,def_key,ss_keys}, // key to chat with player 3
-  {"key_chatplayer4", {&destination_keys[3]}, {'r'}            ,
+  {"key_chatplayer4", {&destination_keys[3]}, {'f'}            ,
    0,MAX_KEY,def_key,ss_keys}, // key to chat with player 4
+  {"key_reload",      {&key_reload},          {'r'}            ,
+   0,MAX_KEY,def_key,ss_keys}, // Key for reloading  -jukeri12  27.8.2015
   {"key_weapontoggle",{&key_weapontoggle},    {'0'}            ,
    0,MAX_KEY,def_key,ss_keys}, // key to toggle between two most preferred weapons with ammo
   {"key_weapon1",     {&key_weapon1},         {'1'}            ,
@@ -531,8 +533,7 @@ default_t defaults[] =
    0,MAX_KEY,def_key,ss_keys}, // key to switch to weapon 8 (chainsaw)        //    |
   {"key_weapon9",     {&key_weapon9},         {'9'}            ,
    0,MAX_KEY,def_key,ss_keys}, // key to switch to weapon 9 (supershotgun)    // phares
-  {"key_reload",      {&key_reload},          {'r'}            ,
-   0,MAX_KEY, def_key,ss_keys}, // Key for reloading  -jukeri12  27.8.2015
+
 
   // killough 2/22/98: screenshot key
   {"key_screenshot",  {&key_screenshot},      {'*'}            ,

@@ -461,7 +461,7 @@ void G_BuildTiccmd(ticcmd_t* cmd)
       cmd->buttons |= BT_CHANGE;
       cmd->buttons |= newweapon<<BT_WEAPONSHIFT;
     }
-
+ 
   // mouse
   if (mousebuttons[mousebforward])
     forward += forwardmove[speed];

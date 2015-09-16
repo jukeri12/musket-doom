@@ -162,6 +162,13 @@ int P_SwitchWeapon(player_t *player)
 
   // killough 2/8/98: follow preferences and fix BFG/SSG bugs
 
+  // Hack fix warning   -jukeri12  16.9.2015
+  if (!player->weaponloaded[player->readyweapon] && player->reloading==true)
+  {
+	player->weaponloaded[player->readyweapon] = false;
+	player->reloading = false;
+  }
+
   do
     switch (*prefer++)
       {

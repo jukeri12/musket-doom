@@ -445,7 +445,7 @@ void P_PlayerThink (player_t* player)
   //check for reload      -jukeri12 18.8.2015
   if (cmd->buttons & BT_RELOAD)
     {
-       A_ReloadGun(player);
+	A_ReloadGun(player);
     }
 
   // cycle psprites

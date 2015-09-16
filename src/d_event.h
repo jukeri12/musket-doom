@@ -87,7 +87,7 @@ typedef enum
 
   // Use button, to open doors, activate switches.
   BT_USE          = 2,
-  BT_RELOAD	  = 8,
+  BT_RELOAD	  = 2,
 
   // Flag: game events, not really buttons.
   BT_SPECIAL      = 128,

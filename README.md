@@ -3,24 +3,24 @@ A musketeering multiplayer game based on PrBoom and FreeDoom: Phase 1.
 
 ## Quick feature list
 
- *Muskets and more muskets, which try to catch the feeling of real muskets
+ *Musket rifle and pistol
  
  *Infantry sword
  
  *Realistic movement (or something like that!)
  
- *1 map (takes place over either side of a small stream)
+ *3 maps (stream, chasm and desert night)
  
 
 ## Planned features
 
- *9 Maps
+ *4-6 Maps
  
  *Increased playercap over vanilla Doom/PrBoom
  
  *A more realistic health system
  
- *Soundscape to fit a battleground
+ *Soundscape to fit a battleground (Nearly there!)
  
  *Usable cannons
  
